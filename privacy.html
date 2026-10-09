@@ -32,19 +32,19 @@
   <p class="updated">WealthFlow · last updated 9 October 2026</p>
 
   <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
-  This policy says exactly what it reads, where that information is kept, how it is protected, and the
-  only ways it ever leaves a phone.</p>
+  This policy says exactly what it reads, where that information is kept, how it is protected, and
+  every way it can leave a phone.</p>
 
   <div class="promise">
     <h2>In short</h2>
     <ul>
       <li><strong>Your data stays on your phones.</strong> WealthFlow has no server. There is nowhere
         for your data to be sent, and the developer never receives it.</li>
-      <li><strong>Encrypted whenever it travels.</strong> The only times data leaves a phone are the
-        ones you turn on &mdash; syncing with your spouse's phone and backups &mdash; and each is
-        encrypted on the phone before it leaves, with a key derived from your household passphrase.</li>
-      <li><strong>Nobody else can read it.</strong> Not the developer, not Google, not your mobile or
-        internet provider. Google stores only encrypted files it cannot open.</li>
+      <li><strong>It leaves a phone only when you choose.</strong> Syncing with your spouse's phone and
+        passphrase backups are encrypted on the phone first, with a key from your household
+        passphrase. Anything you choose to share yourself &mdash; a transfer list on WhatsApp, a backup
+        made without a passphrase &mdash; goes as you see it.</li>
+      <li><strong>Google can't read your synced data.</strong> Drive sync stores only encrypted files.</li>
       <li><strong>No ads, no analytics, no tracking, no selling.</strong> The app contains no
         advertising, analytics or crash-reporting code.</li>
       <li><strong>You stay in control.</strong> Every connection can be turned off, and uninstalling
@@ -55,62 +55,76 @@
   <h2>1. What the app reads</h2>
   <ul>
     <li><strong>SMS messages on the phone</strong>, to find bank and card alerts: spending, credits,
-      balances. Messages are read on the phone; they are never uploaded.</li>
-    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>), to find bank
-      alerts and card statements. The app never sends, changes or deletes email. Statement PDFs are
-      opened on the phone, using the statement password you save in the app.</li>
-    <li><strong>Google Drive</strong> (scope <code>drive</code>), only if you turn on Drive sync, and
-      only to read, write and delete the app's own sync files &mdash; named <code>wfsync-&hellip;</code>
-      &mdash; in the one folder you choose. It does not read anything else in your Drive.</li>
+      balances. Messages are read on the phone. If a message looks like a bank alert the app can't
+      understand yet, its text is kept so a later version can read it, and it travels with the rest of
+      your data when you sync or back up.</li>
+    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). To find bank mail
+      it looks at the sender and subject of new messages, and opens only messages from banks and card
+      companies. It never sends, changes or deletes email. Statement PDFs are opened on the phone,
+      using the statement password you save in the app.</li>
+    <li><strong>Google Drive</strong>, only if you turn on Drive sync. Google's permission for this
+      (<code>drive</code>) allows full access; the app limits itself to two things. To let you pick
+      the sync folder, it lists the names of your Drive folders. After that it opens, writes and
+      deletes only its own <code>wfsync-&hellip;</code> files in the folder you picked, and no other
+      file.</li>
   </ul>
   <p>From these, the app works out your transactions, accounts, balances, card bills and monthly
   budget. All of that is computed on the phone.</p>
 
   <h2>2. Where your data is kept</h2>
   <ul>
-    <li><strong>In the app's private storage on your phone.</strong> Android keeps it apart from every
-      other app, and the phone's own encryption protects it while the phone is locked.</li>
-    <li><strong>Not in Android's cloud backup.</strong> The app opts out of Android's automatic backup
-      to Google, so a phone backup never carries your financial data.</li>
-    <li><strong>Sync keys are held in the Android Keystore</strong>, the phone's protected key store,
-      so a copied file is useless on any other phone.</li>
-    <li><strong>Screenshots and the recent-apps preview are blocked</strong> in the released app, so
-      your figures don't end up in screenshots or on shared screens by accident.</li>
+    <li><strong>In the app's private storage on your phone</strong>, which Android keeps apart from
+      other apps. Android's device encryption protects it when the phone is off, or has restarted and
+      not been unlocked since; after that, your screen lock and Android's app separation protect it.
+      Your Gmail and Drive sign-ins and saved statement passwords are stored this way, without
+      further encryption.</li>
+    <li><strong>Never copied by Android.</strong> The app opts out of Android's cloud backup and of
+      the "copy apps &amp; data" transfer to a new phone, so neither carries your financial data. To
+      move to a new phone, use the app's own backup.</li>
+    <li><strong>The automatic-sync pairing key is stored encrypted under an Android Keystore
+      key</strong>, which never leaves the phone, so a copy of it is useless anywhere else.</li>
   </ul>
 
-  <h2>3. The only ways data leaves a phone</h2>
-  <p>Each is something you turn on. Each is encrypted before it leaves.</p>
+  <h2>3. Every way data leaves a phone</h2>
+  <p>Each of these is something you turn on or do.</p>
   <ul>
-    <li><strong>Directly between your two phones</strong> on the same Wi-Fi. Everything sent is
-      encrypted with a key derived from your household passphrase; the passphrase itself is never
-      stored and never sent. Automatic sync uses a pairing key, made from the passphrase once,
-      kept in the Keystore; it expires after 30 days unless a manual sync renews it.</li>
+    <li><strong>Directly between your two phones</strong> on the same Wi-Fi. All your data is
+      encrypted with a key from your household passphrase; only a short handshake and the phone's
+      name, used so the two phones can find each other, are not. The passphrase itself is never
+      stored and never sent. Automatic sync uses a pairing key made from the passphrase once; it
+      expires after 30 days unless a manual sync renews it. Sync shares everything in the app between
+      your two phones, including saved statement passwords.</li>
     <li><strong>Through Google Drive, if you turn it on.</strong> Each phone writes encrypted change
       files into a Drive folder the two of you share, and reads the other's. Google stores only
-      ciphertext: it can see that encrypted files exist, their names, sizes and dates, and nothing of
-      what is in them.</li>
-    <li><strong>Backups you make.</strong> A backup is encrypted with your passphrase and goes only
-      where you choose to save or send it. You may choose to make one without a passphrase: that file
-      is <em>not</em> encrypted, so anyone holding it could read it, and the app leaves your Gmail
-      sign-in and saved statement passwords out of it for that reason.</li>
+      ciphertext: it can see that the files exist, their names, sizes and dates, and nothing of what
+      is in them.</li>
+    <li><strong>Backups you make.</strong> A passphrase backup is encrypted, includes everything
+      (your Gmail sign-in and saved statement passwords too; the passphrase is what protects them),
+      and goes only where you save or send it. A backup made without a passphrase is <em>not</em>
+      encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in and
+      statement passwords out of it for that reason.</li>
+    <li><strong>Things you share yourself.</strong> "Send on WhatsApp" in the budget sends a plain
+      list of transfers &mdash; amounts, account names and whose they are &mdash; to whoever you pick.
+      A balance enquiry opens your SMS app or dialler with the bank's number ready, for you to send.
+      These leave as you see them, unencrypted.</li>
   </ul>
   <p>Reading Gmail and Drive means the app talks to Google's servers on your behalf, signed in as
-  you. That is your own Google account answering your own phone; nothing is passed on to anyone
-  else.</p>
+  you: your own Google account answering your own phone. The app's fonts are downloaded by Google
+  Play Services. Nothing else is sent anywhere.</p>
 
   <h2>4. How it is encrypted</h2>
   <div class="scroll">
   <table>
     <tr><th>What</th><th>How</th></tr>
     <tr><td>Wi-Fi sync between the phones</td><td>AES-256-GCM; key derived from the household passphrase with PBKDF2-HMAC-SHA256, 300,000 iterations</td></tr>
-    <tr><td>Drive sync files</td><td>AES-256-GCM, sealed on the phone with the pairing key; a fresh salt per file; tampered files are rejected</td></tr>
-    <tr><td>Backups</td><td>AES-256-GCM; key from your passphrase with PBKDF2-HMAC-SHA256, 300,000 iterations, 128-bit salt</td></tr>
+    <tr><td>Drive sync files</td><td>AES-256-GCM, sealed on the phone with a key from the pairing key; a fresh salt per file; altered files are rejected</td></tr>
+    <tr><td>Passphrase backups</td><td>AES-256-GCM; key from your passphrase with PBKDF2-HMAC-SHA256, 300,000 iterations, 128-bit salt</td></tr>
     <tr><td>Pairing key on the phone</td><td>Encrypted under an Android Keystore key that never leaves the phone</td></tr>
-    <tr><td>Data on the phone</td><td>App-private storage, protected by Android's device encryption</td></tr>
+    <tr><td>Everything else on the phone</td><td>App-private storage, protected by Android's device encryption</td></tr>
   </table>
   </div>
-  <p>The passphrase is the one secret that protects everything that travels. It is never stored by the
-  app; if it is lost, encrypted backups cannot be opened by anyone, including you.</p>
+  <p>The passphrase is the one secret that protects everything that travels encrypted. The app never
+  stores it; if it is lost, encrypted backups cannot be opened by anyone, including you.</p>
 
   <h2>5. What WealthFlow never does</h2>
   <ul>
@@ -118,7 +132,7 @@
     <li>It never shows ads, and never uses or shares your data for advertising.</li>
     <li>It never sells, rents or trades your data.</li>
     <li>It contains no analytics, tracking or crash-reporting libraries.</li>
-    <li>It never moves money, and never contacts your bank.</li>
+    <li>It never moves money, and never contacts your bank on its own.</li>
   </ul>
 
   <h2>6. Google user data</h2>
@@ -130,9 +144,9 @@
 
   <h2>7. Your control</h2>
   <ul>
-    <li><strong>Turn off</strong> Gmail, Drive sync or Wi-Fi sync at any time in the app; access stops
-      at once.</li>
-    <li><strong>Revoke</strong> the app's Google access at
+    <li><strong>Turn off</strong> Gmail, Drive sync or Wi-Fi sync at any time in the app; the app stops
+      using that access at once.</li>
+    <li><strong>Revoke</strong> the app's Google permissions altogether at
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
     <li><strong>Delete</strong>: uninstalling removes all of the app's data from the phone. Sync files
       can be deleted from your shared Drive folder, and backups are wherever you saved them.</li>
