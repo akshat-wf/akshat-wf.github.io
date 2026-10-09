@@ -29,7 +29,7 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p class="updated">WealthFlow · last updated 9 October 2026</p>
+  <p class="updated">WealthFlow · last updated 10 October 2026</p>
 
   <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
   This policy says exactly what it reads, where that information is kept, how it is protected, and
@@ -55,12 +55,14 @@
   <h2>1. What the app reads</h2>
   <ul>
     <li><strong>SMS messages on the phone</strong>, to find bank and card alerts: spending, credits,
-      balances. Messages are read on the phone. If a message looks like a bank alert the app can't
-      understand yet, its text is kept so a later version can read it, and it travels with the rest of
-      your data when you sync or back up.</li>
+      balances. Messages are read on the phone. Each transaction keeps the sender and text of the
+      message it came from, so you can see it on the transaction's page, and a message that looks like
+      a bank alert the app can't understand yet is kept so a later version can read it. Both travel
+      with the rest of your data when you sync or back up with a passphrase.</li>
     <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). To find bank mail
       it looks at the sender and subject of new messages, and opens only messages from banks and card
-      companies. It never sends, changes or deletes email. Statement PDFs are opened on the phone,
+      companies. It never sends, changes or deletes email. A bank alert's sender, subject and up to
+      2,000 characters of its text are kept with the transaction it became. Statement PDFs are opened on the phone,
       using the statement password you save in the app; from a bank account's statement the app also
       reads the full account number and customer ID it prints, to show on that account's page.</li>
     <li><strong>Google Drive</strong>, only if you turn on Drive sync. Google's permission for this
@@ -78,8 +80,8 @@
       other apps. Android's device encryption protects it when the phone is off, or has restarted and
       not been unlocked since; after that, your screen lock and Android's app separation protect it.
       Your Gmail and Drive sign-ins, saved statement passwords, and full account numbers and customer
-      IDs are stored this way, without further encryption. Tapping Copy beside a number puts it on the
-      phone's clipboard, which some keyboards and phones sync elsewhere; the app marks it sensitive so
+      IDs are stored this way, without further encryption. Tapping Copy beside a number or a bank message puts it on
+      the phone's clipboard, which some keyboards and phones sync elsewhere; the app marks it sensitive so
       Android hides it from clipboard previews.</li>
     <li><strong>Never copied by Android.</strong> The app opts out of Android's cloud backup and of
       the "copy apps &amp; data" transfer to a new phone, so neither carries your financial data. To
@@ -96,7 +98,8 @@
       name, used so the two phones can find each other, are not. The passphrase itself is never
       stored and never sent. Automatic sync uses a pairing key made from the passphrase once; it
       expires after 30 days unless a manual sync renews it. Sync shares everything in the app between
-      your two phones, including saved statement passwords, account numbers and customer IDs.</li>
+      your two phones, including saved statement passwords, account numbers, customer IDs and each transaction's
+      message.</li>
     <li><strong>Through Google Drive, if you turn it on.</strong> Each phone writes encrypted change
       files into a Drive folder the two of you share, and reads the other's. Google stores only
       ciphertext: it can see that the files exist, their names, sizes and dates, and nothing of what
@@ -106,7 +109,8 @@
       passphrase is what protects them),
       and goes only where you save or send it. A backup made without a passphrase is <em>not</em>
       encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in, statement
-      passwords, full account numbers and customer IDs out of it for that reason.</li>
+      passwords, full account numbers, customer IDs and each transaction's message text out of it for
+      that reason.</li>
     <li><strong>Things you share yourself.</strong> "Send on WhatsApp" in the budget sends a plain
       list of transfers &mdash; amounts, account names and whose they are &mdash; to whoever you pick.
       A balance enquiry opens your SMS app or dialler with the bank's number ready, for you to send.
