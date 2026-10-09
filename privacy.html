@@ -5,58 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WealthFlow privacy policy</title>
 <style>
-  :root { --bg: #f6faf9; --ink: #10201d; --muted: #4c615c; --accent: #0b7a6c; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #0f1a19; --ink: #e6f2ef; --muted: #a3b8b3; --accent: #5fd3c0; } }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 680px; margin: 0 auto; padding: 48px 16px; }
+  :root { --bg: #f6faf9; --ink: #10201d; --muted: #4c615c; --accent: #0b7a6c; --edge: #d5e6e2; --mark: #e2f4f0; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0f1a19; --ink: #e6f2ef; --muted: #a3b8b3; --accent: #5fd3c0; --edge: #24403b; --mark: #163a34; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
   h1 { font-size: 2rem; margin: 0 0 4px; }
-  h2 { font-size: 1.15rem; margin-top: 32px; }
-  p, li { color: var(--muted); }
+  h2 { font-size: 1.2rem; margin: 40px 0 8px; }
+  p, li, td { color: var(--muted); }
+  strong { color: var(--ink); }
   a { color: var(--accent); }
+  code { font-size: .9em; }
+  .updated { margin-top: 0; }
+  .promise { background: var(--mark); border: 1px solid var(--edge); border-radius: 16px; padding: 8px 20px; margin: 24px 0; }
+  .promise h2 { margin-top: 16px; }
+  .promise ul { padding-left: 20px; }
+  .promise li { margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--edge); }
+  th { color: var(--ink); font-weight: 600; }
+  .scroll { overflow-x: auto; }
 </style>
 </head>
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p>WealthFlow, last updated 5 October 2026</p>
+  <p class="updated">WealthFlow · last updated 9 October 2026</p>
 
-  <p>WealthFlow is a personal finance app used privately by one household. It has no server, no
-  accounts of its own, no advertising and no analytics. The developer never receives your data.</p>
+  <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
+  This policy says exactly what it reads, where that information is kept, how it is protected, and the
+  only ways it ever leaves a phone.</p>
 
-  <h2>What the app reads</h2>
+  <div class="promise">
+    <h2>In short</h2>
+    <ul>
+      <li><strong>Your data stays on your phones.</strong> WealthFlow has no server. There is nowhere
+        for your data to be sent, and the developer never receives it.</li>
+      <li><strong>Encrypted whenever it travels.</strong> The only times data leaves a phone are the
+        ones you turn on &mdash; syncing with your spouse's phone and backups &mdash; and each is
+        encrypted on the phone before it leaves, with a key derived from your household passphrase.</li>
+      <li><strong>Nobody else can read it.</strong> Not the developer, not Google, not your mobile or
+        internet provider. Google stores only encrypted files it cannot open.</li>
+      <li><strong>No ads, no analytics, no tracking, no selling.</strong> The app contains no
+        advertising, analytics or crash-reporting code.</li>
+      <li><strong>You stay in control.</strong> Every connection can be turned off, and uninstalling
+        removes everything from the phone.</li>
+    </ul>
+  </div>
+
+  <h2>1. What the app reads</h2>
   <ul>
-    <li><strong>SMS messages</strong> on the phone, to find bank and card transaction alerts.</li>
-    <li><strong>Gmail</strong>, read-only (<code>gmail.readonly</code>), to find bank alerts and card
-      statements. The app never sends, changes or deletes email.</li>
-    <li><strong>Google Drive</strong> (<code>drive</code>), only for the optional spouse sync described
-      below.</li>
+    <li><strong>SMS messages on the phone</strong>, to find bank and card alerts: spending, credits,
+      balances. Messages are read on the phone; they are never uploaded.</li>
+    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>), to find bank
+      alerts and card statements. The app never sends, changes or deletes email. Statement PDFs are
+      opened on the phone, using the statement password you save in the app.</li>
+    <li><strong>Google Drive</strong> (scope <code>drive</code>), only if you turn on Drive sync, and
+      only to read, write and delete the app's own sync files &mdash; named <code>wfsync-&hellip;</code>
+      &mdash; in the one folder you choose. It does not read anything else in your Drive.</li>
+  </ul>
+  <p>From these, the app works out your transactions, accounts, balances, card bills and monthly
+  budget. All of that is computed on the phone.</p>
+
+  <h2>2. Where your data is kept</h2>
+  <ul>
+    <li><strong>In the app's private storage on your phone.</strong> Android keeps it apart from every
+      other app, and the phone's own encryption protects it while the phone is locked.</li>
+    <li><strong>Not in Android's cloud backup.</strong> The app opts out of Android's automatic backup
+      to Google, so a phone backup never carries your financial data.</li>
+    <li><strong>Sync keys are held in the Android Keystore</strong>, the phone's protected key store,
+      so a copied file is useless on any other phone.</li>
+    <li><strong>Screenshots and the recent-apps preview are blocked</strong> in the released app, so
+      your figures don't end up in screenshots or on shared screens by accident.</li>
   </ul>
 
-  <h2>Where your data is kept</h2>
-  <p>Everything the app reads or works out stays in the app's storage on your phone. It is sent only
-  to the household's other phone, by one of these routes:</p>
+  <h2>3. The only ways data leaves a phone</h2>
+  <p>Each is something you turn on. Each is encrypted before it leaves.</p>
   <ul>
-    <li><strong>Directly between the two phones</strong> on the same Wi-Fi, encrypted.</li>
-    <li><strong>Google Drive sync (optional):</strong> each phone writes encrypted change files into a
-      Drive folder the household chose and shares between its own two Google accounts, and reads the
-      other phone's files from it. The files are encrypted on the phone with a key derived from the
-      household's passphrase, so Google cannot read them. The app only reads, writes and deletes its
-      own sync files, named <code>wfsync-…</code>; it does not read anything else in your Drive.</li>
+    <li><strong>Directly between your two phones</strong> on the same Wi-Fi. Everything sent is
+      encrypted with a key derived from your household passphrase; the passphrase itself is never
+      stored and never sent. Automatic sync uses a pairing key, made from the passphrase once,
+      kept in the Keystore; it expires after 30 days unless a manual sync renews it.</li>
+    <li><strong>Through Google Drive, if you turn it on.</strong> Each phone writes encrypted change
+      files into a Drive folder the two of you share, and reads the other's. Google stores only
+      ciphertext: it can see that encrypted files exist, their names, sizes and dates, and nothing of
+      what is in them.</li>
+    <li><strong>Backups you make.</strong> A backup is encrypted with your passphrase and goes only
+      where you choose to save or send it. You may choose to make one without a passphrase: that file
+      is <em>not</em> encrypted, so anyone holding it could read it, and the app leaves your Gmail
+      sign-in and saved statement passwords out of it for that reason.</li>
   </ul>
-  <p>Backups are encrypted with the household's passphrase and go only wherever you save or share
-  them.</p>
+  <p>Reading Gmail and Drive means the app talks to Google's servers on your behalf, signed in as
+  you. That is your own Google account answering your own phone; nothing is passed on to anyone
+  else.</p>
 
-  <h2>Google user data</h2>
+  <h2>4. How it is encrypted</h2>
+  <div class="scroll">
+  <table>
+    <tr><th>What</th><th>How</th></tr>
+    <tr><td>Wi-Fi sync between the phones</td><td>AES-256-GCM; key derived from the household passphrase with PBKDF2-HMAC-SHA256, 300,000 iterations</td></tr>
+    <tr><td>Drive sync files</td><td>AES-256-GCM, sealed on the phone with the pairing key; a fresh salt per file; tampered files are rejected</td></tr>
+    <tr><td>Backups</td><td>AES-256-GCM; key from your passphrase with PBKDF2-HMAC-SHA256, 300,000 iterations, 128-bit salt</td></tr>
+    <tr><td>Pairing key on the phone</td><td>Encrypted under an Android Keystore key that never leaves the phone</td></tr>
+    <tr><td>Data on the phone</td><td>App-private storage, protected by Android's device encryption</td></tr>
+  </table>
+  </div>
+  <p>The passphrase is the one secret that protects everything that travels. It is never stored by the
+  app; if it is lost, encrypted backups cannot be opened by anyone, including you.</p>
+
+  <h2>5. What WealthFlow never does</h2>
+  <ul>
+    <li>It never sends your data to the developer or to any server of its own &mdash; there isn't one.</li>
+    <li>It never shows ads, and never uses or shares your data for advertising.</li>
+    <li>It never sells, rents or trades your data.</li>
+    <li>It contains no analytics, tracking or crash-reporting libraries.</li>
+    <li>It never moves money, and never contacts your bank.</li>
+  </ul>
+
+  <h2>6. Google user data</h2>
   <p>WealthFlow's use of information received from Google APIs adheres to the
   <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
-  Data Policy</a>, including the Limited Use requirements. Google data is used only to provide the
-  features above, is not transferred to anyone else, and is not used for advertising.</p>
+  Data Policy</a>, including the Limited Use requirements. Gmail and Drive data is used only to
+  provide the features above, on your own phones. It is not transferred to anyone, not used for
+  advertising, and not read by any person.</p>
 
-  <h2>Removing your data</h2>
-  <p>Turning off a connection in the app stops further access. Revoke the app's Google access at any
-  time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
-  Uninstalling the app deletes its data from the phone; sync files can be deleted from the shared
-  Drive folder.</p>
+  <h2>7. Your control</h2>
+  <ul>
+    <li><strong>Turn off</strong> Gmail, Drive sync or Wi-Fi sync at any time in the app; access stops
+      at once.</li>
+    <li><strong>Revoke</strong> the app's Google access at
+      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li><strong>Delete</strong>: uninstalling removes all of the app's data from the phone. Sync files
+      can be deleted from your shared Drive folder, and backups are wherever you saved them.</li>
+  </ul>
+
+  <h2>8. Changes</h2>
+  <p>If what the app does with data changes, this page changes first, with a new date at the top.</p>
 
   <h2>Contact</h2>
   <p><a href="mailto:im.akki90@gmail.com">im.akki90@gmail.com</a></p>
