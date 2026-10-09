@@ -61,7 +61,8 @@
     <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). To find bank mail
       it looks at the sender and subject of new messages, and opens only messages from banks and card
       companies. It never sends, changes or deletes email. Statement PDFs are opened on the phone,
-      using the statement password you save in the app.</li>
+      using the statement password you save in the app; from a bank account's statement the app also
+      reads the full account number and customer ID it prints, to show on that account's page.</li>
     <li><strong>Google Drive</strong>, only if you turn on Drive sync. Google's permission for this
       (<code>drive</code>) allows full access; the app limits itself to two things. To let you pick
       the sync folder, it lists the names of your Drive folders. After that it opens, writes and
@@ -76,8 +77,10 @@
     <li><strong>In the app's private storage on your phone</strong>, which Android keeps apart from
       other apps. Android's device encryption protects it when the phone is off, or has restarted and
       not been unlocked since; after that, your screen lock and Android's app separation protect it.
-      Your Gmail and Drive sign-ins and saved statement passwords are stored this way, without
-      further encryption.</li>
+      Your Gmail and Drive sign-ins, saved statement passwords, and full account numbers and customer
+      IDs are stored this way, without further encryption. Tapping Copy beside a number puts it on the
+      phone's clipboard, which some keyboards and phones sync elsewhere; the app marks it sensitive so
+      Android hides it from clipboard previews.</li>
     <li><strong>Never copied by Android.</strong> The app opts out of Android's cloud backup and of
       the "copy apps &amp; data" transfer to a new phone, so neither carries your financial data. To
       move to a new phone, use the app's own backup.</li>
@@ -93,16 +96,17 @@
       name, used so the two phones can find each other, are not. The passphrase itself is never
       stored and never sent. Automatic sync uses a pairing key made from the passphrase once; it
       expires after 30 days unless a manual sync renews it. Sync shares everything in the app between
-      your two phones, including saved statement passwords.</li>
+      your two phones, including saved statement passwords, account numbers and customer IDs.</li>
     <li><strong>Through Google Drive, if you turn it on.</strong> Each phone writes encrypted change
       files into a Drive folder the two of you share, and reads the other's. Google stores only
       ciphertext: it can see that the files exist, their names, sizes and dates, and nothing of what
       is in them.</li>
     <li><strong>Backups you make.</strong> A passphrase backup is encrypted, includes everything
-      (your Gmail sign-in and saved statement passwords too; the passphrase is what protects them),
+      (your Gmail sign-in, saved statement passwords, account numbers and customer IDs too; the
+      passphrase is what protects them),
       and goes only where you save or send it. A backup made without a passphrase is <em>not</em>
-      encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in and
-      statement passwords out of it for that reason.</li>
+      encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in, statement
+      passwords, full account numbers and customer IDs out of it for that reason.</li>
     <li><strong>Things you share yourself.</strong> "Send on WhatsApp" in the budget sends a plain
       list of transfers &mdash; amounts, account names and whose they are &mdash; to whoever you pick.
       A balance enquiry opens your SMS app or dialler with the bank's number ready, for you to send.
