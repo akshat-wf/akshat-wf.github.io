@@ -72,7 +72,8 @@
       stores where the phone was: latitude, longitude, how accurate the fix was, and when it was taken.
       No address or place name &mdash; finding one would mean sending the coordinates to a lookup
       service, so the app doesn't. It uses Android's own location service. Locations travel with the
-      transaction when you sync or back up with a passphrase.</li>
+      transaction when you sync or back up with a passphrase. "Open in Maps" hands the point to your maps
+      app, which handles it under its own policy.</li>
     <li><strong>Google Drive</strong>, only if you turn on Drive sync. Google's permission for this
       (<code>drive</code>) allows full access; the app limits itself to two things. To let you pick
       the sync folder, it lists the names of your Drive folders. After that it opens, writes and
@@ -178,8 +179,9 @@
       using that access at once.</li>
     <li><strong>Merchant lookup off</strong> stops it at once and deletes the phone's list of names already
       looked up; categories it already filled stay on your transactions, and you can change them.</li>
-    <li><strong>Location off</strong> stops it at once, and can also delete the locations already stored,
-      on both phones. Any one transaction's location can be removed from its page.</li>
+    <li><strong>Location off</strong> stops it at once, and can also delete the locations already stored;
+      the other phone deletes them when it next syncs. Any one transaction's location can be removed from
+      its page.</li>
     <li><strong>Revoke</strong> the app's Google permissions altogether at
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
     <li><strong>Delete</strong>: uninstalling removes all of the app's data from the phone. Sync files
