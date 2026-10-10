@@ -29,7 +29,7 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p class="updated">WealthFlow · last updated 10 October 2026</p>
+  <p class="updated">WealthFlow · last updated 11 October 2026</p>
 
   <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
   This policy says exactly what it reads, where that information is kept, how it is protected, and
@@ -61,9 +61,9 @@
       message it came from, so you can see it on the transaction's page, and a message that looks like
       a bank alert the app can't understand yet is kept so a later version can read it. Both travel
       with the rest of your data when you sync or back up with a passphrase.</li>
-    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). To find bank mail
-      it looks at the sender and subject of new messages, and opens only messages from banks and card
-      companies. It never sends, changes or deletes email. A bank alert's sender, subject and up to
+    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). It asks Gmail only for messages from
+      the addresses banks and card companies send alerts and statements from, so the rest of your mail is
+      never seen. It never sends, changes or deletes email. A bank alert's sender, subject and up to
       2,000 characters of its text are kept with the transaction it became. Statement PDFs are opened on the phone,
       using the statement password you save in the app; from a bank account's statement the app also
       reads the full account number and customer ID it prints, to show on that account's page.</li>
@@ -118,8 +118,8 @@
       passphrase is what protects them),
       and goes only where you save or send it. A backup made without a passphrase is <em>not</em>
       encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in, statement
-      passwords, full account numbers, customer IDs, each transaction's message text and locations out of
-      it for that reason.</li>
+      passwords, full account numbers, customer IDs, the text of bank messages (each transaction's, and any
+      it couldn't read) and locations out of it for that reason.</li>
     <li><strong>Merchant lookup, only if you turn it on.</strong> For a shop the app doesn't recognise, the
       phone asks Wikipedia (run by the Wikimedia Foundation) what kind of business it is. Only the shop's
       name, as your bank wrote it, is sent &mdash; never an amount, date, account, card number, message or
