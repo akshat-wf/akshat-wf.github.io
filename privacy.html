@@ -67,6 +67,12 @@
       2,000 characters of its text are kept with the transaction it became. Statement PDFs are opened on the phone,
       using the statement password you save in the app; from a bank account's statement the app also
       reads the full account number and customer ID it prints, to show on that account's page.</li>
+    <li><strong>The phone's location</strong>, only if you turn on "Tag transactions with location" in
+      Settings, on that phone. When a payment arrives by SMS on that phone, or you type one in, the app
+      stores where the phone was: latitude, longitude, how accurate the fix was, and when it was taken.
+      No address or place name &mdash; finding one would mean sending the coordinates to a lookup
+      service, so the app doesn't. It uses Android's own location service. Locations travel with the
+      transaction when you sync or back up with a passphrase.</li>
     <li><strong>Google Drive</strong>, only if you turn on Drive sync. Google's permission for this
       (<code>drive</code>) allows full access; the app limits itself to two things. To let you pick
       the sync folder, it lists the names of your Drive folders. After that it opens, writes and
@@ -111,8 +117,8 @@
       passphrase is what protects them),
       and goes only where you save or send it. A backup made without a passphrase is <em>not</em>
       encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in, statement
-      passwords, full account numbers, customer IDs and each transaction's message text out of it for
-      that reason.</li>
+      passwords, full account numbers, customer IDs, each transaction's message text and locations out of
+      it for that reason.</li>
     <li><strong>Merchant lookup, only if you turn it on.</strong> For a shop the app doesn't recognise, the
       phone asks Wikipedia (run by the Wikimedia Foundation) what kind of business it is. Only the shop's
       name, as your bank wrote it, is sent &mdash; never an amount, date, account, card number, message or
@@ -172,6 +178,8 @@
       using that access at once.</li>
     <li><strong>Merchant lookup off</strong> stops it at once and deletes the phone's list of names already
       looked up; categories it already filled stay on your transactions, and you can change them.</li>
+    <li><strong>Location off</strong> stops it at once, and can also delete the locations already stored,
+      on both phones. Any one transaction's location can be removed from its page.</li>
     <li><strong>Revoke</strong> the app's Google permissions altogether at
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
     <li><strong>Delete</strong>: uninstalling removes all of the app's data from the phone. Sync files
