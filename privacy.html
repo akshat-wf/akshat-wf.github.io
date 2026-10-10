@@ -45,6 +45,8 @@
         passphrase. Anything you choose to share yourself &mdash; a transfer list on WhatsApp, a backup
         made without a passphrase &mdash; goes as you see it.</li>
       <li><strong>Google can't read your synced data.</strong> Drive sync stores only encrypted files.</li>
+      <li><strong>One optional feature sends shop names to Wikipedia.</strong> "Look up merchant categories
+        online" is off unless you turn it on, in Settings › Privacy, on each phone.</li>
       <li><strong>No ads, no analytics, no tracking, no selling.</strong> The app contains no
         advertising, analytics or crash-reporting code.</li>
       <li><strong>You stay in control.</strong> Every connection can be turned off, and uninstalling
@@ -111,6 +113,17 @@
       encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in, statement
       passwords, full account numbers, customer IDs and each transaction's message text out of it for
       that reason.</li>
+    <li><strong>Merchant lookup, only if you turn it on.</strong> For a shop the app doesn't recognise, the
+      phone asks Wikipedia (run by the Wikimedia Foundation) what kind of business it is. Only the shop's
+      name, as your bank wrote it, is sent &mdash; never an amount, date, account, card number, message or
+      your names. A name is sent only when this phone's own purchases show it as a card purchase, and none
+      of its messages show a UPI, IMPS, NEFT or similar transfer; never when it contains your household's
+      names or a title like Mr or Dr. Names can come from bank SMS or bank alert emails. A small shop's
+      name can be its owner's name. Wikipedia sees your phone's internet address and that the request came
+      from WealthFlow, over HTTPS, without you being signed in; its own
+      <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a> applies. The
+      setting is per phone and covers only that phone's person's (and joint) purchases. Each name is asked
+      about once; the categories found are saved on your transactions and sync to the other phone.</li>
     <li><strong>Things you share yourself.</strong> "Send on WhatsApp" in the budget sends a plain
       list of transfers &mdash; amounts, account names and whose they are &mdash; to whoever you pick.
       A balance enquiry opens your SMS app or dialler with the bank's number ready, for you to send.
@@ -118,7 +131,8 @@
   </ul>
   <p>Reading Gmail and Drive means the app talks to Google's servers on your behalf, signed in as
   you: your own Google account answering your own phone. The app's fonts are downloaded by Google
-  Play Services. Nothing else is sent anywhere.</p>
+  Play Services. Apart from the merchant lookup above, if you turn it on,
+  nothing else is sent anywhere.</p>
 
   <h2>4. How it is encrypted</h2>
   <div class="scroll">
@@ -148,12 +162,16 @@
   <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
   Data Policy</a>, including the Limited Use requirements. Gmail and Drive data is used only to
   provide the features above, on your own phones. It is not transferred to anyone, not used for
-  advertising, and not read by any person.</p>
+  advertising, and not read by any person &mdash; with one exception you control: if you turn on merchant
+  lookup, a shop's name read from a bank alert email can be sent to Wikipedia, as described in section 3,
+  only to show you which category that purchase belongs to.</p>
 
   <h2>7. Your control</h2>
   <ul>
     <li><strong>Turn off</strong> Gmail, Drive sync or Wi-Fi sync at any time in the app; the app stops
       using that access at once.</li>
+    <li><strong>Merchant lookup off</strong> stops it at once and deletes the phone's list of names already
+      looked up; categories it already filled stay on your transactions, and you can change them.</li>
     <li><strong>Revoke</strong> the app's Google permissions altogether at
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
     <li><strong>Delete</strong>: uninstalling removes all of the app's data from the phone. Sync files
