@@ -29,7 +29,7 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p class="updated">WealthFlow · last updated 11 October 2026</p>
+  <p class="updated">WealthFlow · last updated 13 October 2026</p>
 
   <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
   This policy says exactly what it reads, where that information is kept, how it is protected, and
@@ -66,7 +66,12 @@
       never seen. It never sends, changes or deletes email. A bank alert's sender, subject and up to
       2,000 characters of its text are kept with the transaction it became. Statement PDFs are opened on the phone,
       using the statement password you save in the app; from a bank account's statement the app also
-      reads the full account number and customer ID it prints, to show on that account's page.</li>
+      reads the full account number and customer ID it prints, to show on that account's page.
+      It also reads the monthly NSDL Consolidated Account Statement, from NSDL's own address, for your
+      mutual funds and shares: it is opened on the phone with the PAN you save in the app. The PAN stays
+      on that phone &mdash; it is never synced or backed up. The holdings read from the statement (each
+      fund and share, its units and value, and each demat account's broker and the last four digits of
+      its client ID) travel with the rest of your data when you sync or back up.</li>
     <li><strong>The phone's location</strong>, only if you turn on "Tag transactions with location" in
       Settings, on that phone. When a payment arrives by SMS on that phone, or you type one in, the app
       stores where the phone was: latitude, longitude, how accurate the fix was, and when it was taken.
@@ -138,8 +143,12 @@
   </ul>
   <p>Reading Gmail and Drive means the app talks to Google's servers on your behalf, signed in as
   you: your own Google account answering your own phone. The app's fonts are downloaded by Google
-  Play Services. Apart from the merchant lookup above, if you turn it on,
-  nothing else is sent anywhere.</p>
+  Play Services. Once a day, and after a new NSDL statement is read, the app downloads the public
+  price lists that AMFI, the National Stock Exchange and BSE publish for every mutual fund and share,
+  to value your holdings between statements. It downloads each whole list and looks your holdings up
+  on the phone, so nothing about what you hold is sent; those sites see only the phone's internet
+  address and the time. The prices are kept on that phone and are not synced. Apart from the merchant
+  lookup above, if you turn it on, nothing else is sent anywhere.</p>
 
   <h2>4. How it is encrypted</h2>
   <div class="scroll">
