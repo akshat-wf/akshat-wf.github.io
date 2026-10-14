@@ -68,9 +68,14 @@
       <strong>Personal messages (anything from a phone number) and one-time passwords are skipped
       and never stored.</strong> What is kept travels with the rest of your data when you sync or
       back up with a passphrase.</li>
-    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). It asks Gmail only for messages from
-      the addresses banks, card companies and a few billers send alerts, statements and bills from, so the rest of your mail is
-      never seen. It never sends, changes or deletes email. A bank alert's sender, subject and up to
+    <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). Gmail is read only for mail from a fixed
+      list of addresses that banks, card companies, a few billers and NSDL send alerts, statements and
+      bills from. The first read, and any later re-read, is a Gmail search for those addresses, so only
+      their mail ever comes to the phone. After that, each sync asks Gmail which emails have arrived since
+      the last one, which gives an identifier for each and nothing of its content. For each new email the
+      phone then asks only who it is from and when it arrived, never its subject or its text, and
+      downloads the email only if the sender is on that list. Every other email is never opened, and
+      nothing about it is kept. It never sends, changes or deletes email. A bank alert's sender, subject and up to
       2,000 characters of its text are kept with the transaction it became. Statement PDFs are opened on the phone,
       using the statement password you save in the app; from a bank account's statement the app also
       reads the full account number and customer ID it prints, to show on that account's page.
