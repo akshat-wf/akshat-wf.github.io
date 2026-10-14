@@ -29,7 +29,7 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p class="updated">WealthFlow · last updated 13 October 2026</p>
+  <p class="updated">WealthFlow · last updated 14 October 2026</p>
 
   <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
   This policy says exactly what it reads, where that information is kept, how it is protected, and
@@ -45,6 +45,9 @@
         passphrase. Anything you choose to share yourself &mdash; a transfer list on WhatsApp, a backup
         made without a passphrase &mdash; goes as you see it.</li>
       <li><strong>Google can't read your synced data.</strong> Drive sync stores only encrypted files.</li>
+      <li><strong>Only money messages are kept.</strong> Every SMS is checked on the phone. Bank,
+        card and bill messages are kept with what they describe; personal messages and one-time
+        passwords are skipped and never stored.</li>
       <li><strong>One optional feature sends shop names to Wikipedia.</strong> "Look up merchant categories
         online" is off unless you turn it on, in Settings › Privacy, on each phone.</li>
       <li><strong>No ads, no analytics, no tracking, no selling.</strong> The app contains no
@@ -56,13 +59,17 @@
 
   <h2>1. What the app reads</h2>
   <ul>
-    <li><strong>SMS messages on the phone</strong>, to find bank and card alerts: spending, credits,
-      balances. Messages are read on the phone. Each transaction keeps the sender and text of the
-      message it came from, so you can see it on the transaction's page, and a message that looks like
-      a bank alert the app can't understand yet is kept so a later version can read it. Both travel
-      with the rest of your data when you sync or back up with a passphrase.</li>
+    <li><strong>SMS messages on the phone</strong>, for bank and card alerts (spending, credits,
+      balances) and the bills your billers text you. Every message is checked on the phone: when the
+      app is set up, as each one arrives, and when it catches up on any that came while it wasn't
+      running. Only these money messages are kept. Each transaction or bill keeps the sender and text
+      of the message it came from, so you can see it on its page, and a message that looks like a
+      bank alert the app can't understand yet is kept so a later version can read it.
+      <strong>Personal messages (anything from a phone number) and one-time passwords are skipped
+      and never stored.</strong> What is kept travels with the rest of your data when you sync or
+      back up with a passphrase.</li>
     <li><strong>Gmail, read-only</strong> (Google scope <code>gmail.readonly</code>). It asks Gmail only for messages from
-      the addresses banks and card companies send alerts and statements from, so the rest of your mail is
+      the addresses banks, card companies and a few billers send alerts, statements and bills from, so the rest of your mail is
       never seen. It never sends, changes or deletes email. A bank alert's sender, subject and up to
       2,000 characters of its text are kept with the transaction it became. Statement PDFs are opened on the phone,
       using the statement password you save in the app; from a bank account's statement the app also
@@ -123,8 +130,8 @@
       passphrase is what protects them),
       and goes only where you save or send it. A backup made without a passphrase is <em>not</em>
       encrypted, so anyone holding the file could read it; the app leaves your Gmail sign-in, statement
-      passwords, full account numbers, customer IDs, the text of bank messages (each transaction's, and any
-      it couldn't read) and locations out of it for that reason.</li>
+      passwords, full account numbers, customer IDs, the text of bank and bill messages (each transaction's and
+      bill's, and any it couldn't read) and locations out of it for that reason.</li>
     <li><strong>Merchant lookup, only if you turn it on.</strong> For a shop the app doesn't recognise, the
       phone asks Wikipedia (run by the Wikimedia Foundation) what kind of business it is. Only the shop's
       name, as your bank wrote it, is sent &mdash; never an amount, date, account, card number, message or
@@ -147,8 +154,8 @@
   price lists that AMFI, the National Stock Exchange and BSE publish for every mutual fund and share,
   to value your holdings between statements. It downloads each whole list and looks your holdings up
   on the phone, so nothing about what you hold is sent; those sites see only the phone's internet
-  address and the time. The prices are kept on that phone and are not synced. Apart from the merchant
-  lookup above, if you turn it on, nothing else is sent anywhere.</p>
+  address and the time. The prices are kept on that phone and are not synced. Apart from the ways listed
+  in this section, nothing about you or your household is sent anywhere.</p>
 
   <h2>4. How it is encrypted</h2>
   <div class="scroll">
