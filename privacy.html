@@ -29,7 +29,7 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p class="updated">WealthFlow · last updated 15 October 2026</p>
+  <p class="updated">WealthFlow · last updated 23 October 2026</p>
 
   <p>WealthFlow is a personal finance app used privately by one household on its own Android phones.
   This policy says exactly what it reads, where that information is kept, how it is protected, and
@@ -159,6 +159,18 @@
       and your phone's model. It reaches the developer only if you send it, and you can remove the
       picture first. If your mail app saves drafts to your account, an unsent one stays there.
       These leave as you see them, unencrypted.</li>
+    <li><strong>Taking Google's access back, when you disconnect Gmail or turn Drive sync off.</strong>
+      The phone sends Google one sign-in token (the refresh token, or the access token if that is all
+      it holds), to <code>oauth2.googleapis.com/revoke</code> over HTTPS, so Google withdraws the
+      permission. Nothing else is in the request: no email, file, name or figure. Google sees the
+      phone's internet address and the time, and its own privacy policy applies. Gmail and Drive use
+      one Google permission per account, so withdrawing it ends <strong>both</strong>, and any other
+      phone signed in to WealthFlow with the same Google account will ask you to sign in again. The
+      request is skipped while another connection on this phone still uses that account (the other
+      mailbox, or Drive sync); the sign-in is still deleted from this phone, but WealthFlow stays
+      listed at Google until the last one is disconnected. If the request gets no answer (the phone is
+      offline, say), the sign-in is still deleted from the phone, but WealthFlow may stay listed at
+      Google; you can remove it yourself, as in section 7.</li>
   </ul>
   <p>Reading Gmail and Drive means the app talks to Google's servers on your behalf, signed in as
   you: your own Google account answering your own phone. The app's fonts are downloaded by Google
@@ -204,14 +216,16 @@
   <h2>7. Your control</h2>
   <ul>
     <li><strong>Turn off</strong> Gmail, Drive sync or Wi-Fi sync at any time in the app; the app stops
-      using that access at once.</li>
+      using that access at once. Disconnecting Gmail or turning Drive sync off also asks Google to take
+      the app's permission back, as described in section 3.</li>
     <li><strong>Merchant lookup off</strong> stops it at once and deletes the phone's list of names already
       looked up; categories it already filled stay on your transactions, and you can change them.</li>
     <li><strong>Location off</strong> stops it at once, and can also delete the locations already stored;
       the other phone deletes them when it next syncs. Any one transaction's location can be removed from
       its page.</li>
     <li><strong>Revoke</strong> the app's Google permissions altogether at
-      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, for
+      instance if the app could not do it when you disconnected.</li>
     <li><strong>Delete</strong>: uninstalling removes all of the app's data from the phone. Sync files
       can be deleted from your shared Drive folder, and backups are wherever you saved them.</li>
   </ul>
